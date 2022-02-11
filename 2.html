@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX2</title>
+</head>
+<body>
+    <script>
+        
+let promise1 = new Promise(function(resolve, reject) {
+    setTimeout(() => {
+        resolve("Hello from 1");
+    }, 2000);
+    })
+  
+let promise2 = new Promise(function(resolve,reject){
+    setTimeout(() => {
+        resolve("Hello from 2");
+    },4000);
+    })
+    
+let promise3 = new Promise(function(resolve, reject) {
+        setTimeout(() => {
+            resolve("Hello from 3");
+        },1000);
+        })
+let promise4 = new Promise(function(resolve, reject) {
+            setTimeout(() => {
+                resolve("Hello from 4");
+            },5000);
+            })
+let promise5 = new Promise(function(resolve, reject) {
+                setTimeout(() => {
+                    resolve("Hello from 5");
+                },3000);
+                })
+Promise.allSettled([promise1,promise2,promise3,promise4,promise5]).then(function(result) {
+    console.log('Result from all promise',result);
+    console.log('All tasks are ready!');
+
+})
+
+    </script>
+</body>
+</html>
